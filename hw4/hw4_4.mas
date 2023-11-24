@@ -1,0 +1,31 @@
+org     100
+        input               / get value for x
+        store       X
+        input               / get value for y
+        store       Y
+
+Multiply, load          ANS		/ load ANS to add X for Y times
+	  Add 	        X		/ Add X to ANS
+          Store 	ANS
+          Load 		COUNT
+	  Add 		ONE
+          Store 	COUNT
+          jump          CheckY
+
+CheckY, Load 		COUNT
+	Store 		TEST
+	Subt 		Y
+        Skipcond 	400
+        Jump 		Multiply
+	Jump 		Result
+
+Result, load        ANS       / just print x, then done
+        output
+        Halt
+
+X,      dec         0       / default value for x
+Y,      dec         0       / default value for y
+ONE,	dec			1
+ANS,	dec			0		/ answer
+COUNT, 	dec			0
+TEST,	dec			0

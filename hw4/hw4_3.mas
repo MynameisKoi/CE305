@@ -1,0 +1,35 @@
+ORG 100
+
+
+LOOP, LOAD COUNT / Load the loop counter
+	Jump CHECK5
+
+CHECK5, Load COUNT
+	Store TEST
+    Subt FIVE
+	Skipcond 400
+    Jump CHECK3
+	Halt
+
+PLUS, Load COUNT
+	ADD ONE     / Add 1 from the counter
+    STORE COUNT  / Store the updated counter
+    JUMP LOOP    / Jump to the beginning of the loop
+
+CHECK3, Load COUNT
+	Store TEST
+	SUBT THREE
+    Skipcond 400
+    Jump PRINT
+	Jump PLUS
+
+PRINT, Load COUNT
+	OUTPUT  / Output the loop counter
+	Jump PLUS
+
+
+COUNT, DEC 0     / Memory location for the loop counter
+ONE,   DEC 1     / Constant value 1
+TEST,  DEC 0
+THREE, DEC 3
+FIVE,  DEC 5

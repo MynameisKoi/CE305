@@ -1,0 +1,20 @@
+ORG 100
+
+    LOAD A   / Load the address of the string into the accumulator
+    OUTPUT     / Output the string
+    LOAD B
+    OUTPUT
+    LOAD C
+    OUTPUT
+    LOAD D
+    OUTPUT
+    LOAD E
+    OUTPUT
+    HALT       / Halt the program
+
+A, HEX 48 / H
+B, HEX 45 / E
+C, HEX 4C / L
+D, HEX 4C / L
+E, HEX 4F / O
+F, HEX 00 / Null terminator
